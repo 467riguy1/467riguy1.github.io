@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #e8e6e3;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0d0d0d;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #e8e6e3;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: #999;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #e8e6e3;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .intro {
+            margin-bottom: 4rem;
+        }
+
+        .intro h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .intro p {
+            font-size: 1.15rem;
+            color: #a0a0a0;
+            max-width: 600px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: #161616;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: box-shadow 0.15s ease, transform 0.15s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            transform: translateY(-2px);
+            border-color: #444;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #1f1f1f;
+            border-bottom: 1px solid #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: #e8e6e3;
+        }
+
+        .project-content p {
+            font-size: 0.95rem;
+            color: #999;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background-color: #1f1f1f;
+            color: #888;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #2a2a2a;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: #e8e6e3;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-bottom: 1px solid #444;
+            padding-bottom: 1px;
+        }
+
+        .project-links a:hover {
+            border-color: #e8e6e3;
+        }
+
+        footer {
+            background-color: #0d0d0d;
+            border-top: 1px solid #2a2a2a;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #555;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #e8e6e3;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .intro h1 {
+                font-size: 1.75rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Your Name</a>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Hi, I'm a developer.</h1>
+            <p>I build things for the web. Here are some projects I've worked on.</p>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <span>Screenshot placeholder</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Dashboard</h3>
+                        <p>A React-based admin panel for managing products, orders, and analytics. Built with TypeScript and Tailwind.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <span>Screenshot placeholder</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Manager API</h3>
+                        <p>RESTful API with authentication, real-time updates via WebSockets, and PostgreSQL for data persistence.</p>
+                        <div class="project-tags">
+                            <span class="tag">Express</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Documentation</a>
+                            <a href="#">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <span>Screenshot placeholder</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather CLI Tool</h3>
+                        <p>Command-line utility that fetches weather data from OpenWeatherMap. Supports multiple locations and caching.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">CLI</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">PyPI</a>
+                            <a href="#">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <span>Screenshot placeholder</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Generator</h3>
+                        <p>Static site generator that turns Markdown files into a clean portfolio. Uses a custom templating engine.</p>
+                        <div class="project-tags">
+                            <span class="tag">Go</span>
+                            <span class="tag">Markdown</span>
+                            <span class="tag">SSG</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <span>Screenshot placeholder</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Browser Extension</h3>
+                        <p>Chrome extension that blocks distracting sites during focus sessions. Tracks productivity stats locally.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Chrome API</span>
+                            <span class="tag">HTML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Chrome Store</a>
+                            <a href="#">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <span>Screenshot placeholder</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Game Score Tracker</h3>
+                        <p>Mobile-first web app for tracking board game scores with friends. Offline support via Service Workers.</p>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">PWA</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="#">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with plain HTML & CSS. No gradients.</p>
+        <p style="margin-top: 0.75rem;">
+            <a href="mailto:you@example.com">Email</a> · 
+            <a href="#">GitHub</a> · 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+</body>
+</html>
